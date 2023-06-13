@@ -1,4 +1,5 @@
 const router = require('express').Router()
+require('./../middleware/yupAuthenticate/translation')
 const UserRouter = require('./User')
 const ProductRouter = require('./Product')
 const CardRouter = require('./cart')
@@ -9,6 +10,6 @@ router.use('/', UserRouter)
 router.use('/', ProductRouter)
 router.use('/', CardRouter)
 router.use('/', OrderRouter)
-router.use('/', AuthRouter)
+router.use('/auth/', AuthRouter)
 
 module.exports = router
